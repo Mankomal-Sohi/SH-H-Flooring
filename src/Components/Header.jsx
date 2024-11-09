@@ -16,9 +16,9 @@ import { FaSearch } from "react-icons/fa";
 
 const navigation = [
   // { name: 'Dashboard', href: '#' },
-  { name: "Financing", href: "/Financing" },
+
   { name: "Reviews", href: "/Reviews" },
-  { name: "Inspiration", href: "/Inspiration" },
+
   { name: "Contact", href: "/Contact" },
 ];
 
@@ -32,10 +32,9 @@ const Header = () => {
       <div className="container flex flex-col md:flex-row justify-between items-center m-auto p-4">
         {/* Address Section */}
         <div className="address text-xs lg:text-sm text-center md:text-left mb-4 md:mb-0">
-          111 Portage Ave, Saint Eustache, MB R0H 1H0 <br /> (For Appointment
-          only)
-          <span className="flex justify-center text-xs lg:text-sm md:justify-start gap-6 items-center cursor-pointer text-red-500 hover:text-red-700 ">
-            <FaPhoneAlt /> 604-554-6789
+          Findlay Creek, Ottawa, K1X 0J3 <br /> (For Appointment only)
+          <span className="flex justify-center text-xs mt-3 lg:text-sm md:justify-start gap-6 items-center cursor-pointer text-red-500 hover:text-red-700 ">
+            <FaPhoneAlt /> 343-333-7127
           </span>
         </div>
 
@@ -49,27 +48,10 @@ const Header = () => {
             />
           </Link>
         </div>
-
-        {/* Search Bar */}
-        <div className="search flex gap-2 w-full md:w-auto">
-          <input
-            type="text"
-            className="block w-full md:w-64 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-            placeholder="What are you looking for?"
-            required
-          />
-          <button
-            type="submit"
-            className="p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700"
-          >
-            <FaSearch />
-          </button>
-        </div>
       </div>
-      <div className="md:h-[0.5px] md:bg-black"></div>
 
       <div>
-        <Disclosure as="nav" className="bg-white">
+        <Disclosure as="nav" className="bg-white sm:bg-black">
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 py-0">
             <div className="relative flex h-16 items-center justify-between ">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -90,11 +72,11 @@ const Header = () => {
 
               <div className="flex flex-1 items-center justify-center sm:items-stretch ">
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 ">
                     {/* Dropdown menu for Dashboard */}
                     <Menu as="div" className="relative inline-block text-left">
                       <div>
-                        <MenuButton className="inline-flex justify-center rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:text-green-400">
+                        <MenuButton className="inline-flex justify-center rounded-md px-3 py-2 text-sm font-medium text-slate-100 hover:text-green-400">
                           Products
                           <ChevronDownIcon
                             className="-mr-1 ml-2 h-5 w-5"
@@ -119,14 +101,45 @@ const Header = () => {
                             Carpet Tile
                           </NavLink>
                         </MenuItem>
+                        <MenuItem>
+                          <NavLink
+                            to="/Hardwood"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Hardwood
+                          </NavLink>
+                        </MenuItem>
+                        <MenuItem>
+                          <NavLink
+                            to="/Laminate"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Laminate
+                          </NavLink>
+                        </MenuItem>
+                        <MenuItem>
+                          <NavLink
+                            to="/Vinyl"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Vinyl
+                          </NavLink>
+                        </MenuItem>
+                        <MenuItem>
+                          <NavLink
+                            to="/Paint"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Paint
+                          </NavLink>
+                        </MenuItem>
                       </MenuItems>
                     </Menu>
                     {/* Dropdown mwnu for Services */}
                     <Menu as="div" className="relative inline-block text-left">
                       <div>
-                        <MenuButton className="inline-flex justify-center rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:text-green-400">
-                          <NavLink to="/Services">Services</NavLink>
-
+                        <MenuButton className="inline-flex justify-center rounded-md px-3 py-2 text-sm font-medium text-slate-100 hover:text-green-400">
+                          Services
                           <ChevronDownIcon
                             className="-mr-1 ml-2 h-5 w-5"
                             aria-hidden="true"
@@ -136,18 +149,34 @@ const Header = () => {
                       <MenuItems className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <MenuItem>
                           <NavLink
-                            to="/KitchenRemodeling"
+                            to="/CarpetInstallation"
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                           >
-                            Kitchen Remodeling
+                            Carpet Installation
                           </NavLink>
                         </MenuItem>
                         <MenuItem>
                           <NavLink
-                            to="/BathroomRemodeling"
+                            to="/HardwoodInstallation"
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                           >
-                            Bathroom Remodeling
+                            Hardwood Installation
+                          </NavLink>
+                        </MenuItem>
+                        <MenuItem>
+                          <NavLink
+                            to="/LaminateInstallation"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Laminate Installation
+                          </NavLink>
+                        </MenuItem>
+                        <MenuItem>
+                          <NavLink
+                            to="/VinylInstallation"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            Vinyl Installation
                           </NavLink>
                         </MenuItem>
                         <MenuItem>
@@ -166,7 +195,7 @@ const Header = () => {
                         to={item.href}
                         aria-current={item.current ? "page" : undefined}
                         className={classNames(
-                          "text-gray-700",
+                          "text-slate-100",
                           "rounded-md px-3 py-2 text-sm font-medium",
                           "hover:text-green-400"
                         )}
@@ -177,7 +206,7 @@ const Header = () => {
                     {/* Dropdown for About Us */}
                     <Menu as="div" className="relative inline-block text-left">
                       <div>
-                        <MenuButton className="inline-flex justify-center rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:text-green-400">
+                        <MenuButton className="inline-flex justify-center rounded-md px-3 py-2 text-sm font-medium text-slate-100 hover:text-green-400">
                           About Us
                           <ChevronDownIcon
                             className="-mr-1 ml-2 h-5 w-5"
@@ -210,18 +239,170 @@ const Header = () => {
             </div>
           </div>
 
-          <DisclosurePanel>
-            <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item, index) => (
+          <DisclosurePanel className="sm:hidden">
+            <div className="px-2 pb-3 pt-2 bg-black flex flex-row flex-wrap">
+              {/* Display Products Dropdown */}
+
+              <Menu as="div" className="relative inline-block text-left">
+                <div>
+                  <MenuButton className="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-white hover:text-green-400">
+                    Products
+                    <ChevronDownIcon
+                      className="-mr-1 ml-2 h-5 w-5"
+                      aria-hidden="true"
+                    />
+                  </MenuButton>
+                </div>
+                <MenuItems className="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <MenuItem>
+                    <NavLink
+                      to="/Carpet"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Carpet
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <NavLink
+                      to="/CarpetTile"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Carpet Tile
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <NavLink
+                      to="/Hardwood"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Hardwood
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <NavLink
+                      to="/Laminate"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Laminate
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <NavLink
+                      to="/Vinyl"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Vinyl
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <NavLink
+                      to="/Paint"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Paint
+                    </NavLink>
+                  </MenuItem>
+                </MenuItems>
+              </Menu>
+
+              {/* Display Services Dropdown */}
+              <Menu as="div" className="relative inline-block text-left">
+                <div>
+                  <MenuButton className="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-white hover:text-green-400">
+                    Services
+                    <ChevronDownIcon
+                      className="-mr-1 ml-2 h-5 w-5"
+                      aria-hidden="true"
+                    />
+                  </MenuButton>
+                </div>
+                <MenuItems className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <MenuItem>
+                    <NavLink
+                      to="/CarpetInstallation"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Carpet Installation
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <NavLink
+                      to="/HardwoodInstallation"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Hardwood Installation
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <NavLink
+                      to="/LaminateInstallation"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Laminate Installation
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <NavLink
+                      to="/VinylInstallation"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Vinyl Installation
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <NavLink
+                      to="/ResidentialPainting"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Residential Painting
+                    </NavLink>
+                  </MenuItem>
+                </MenuItems>
+              </Menu>
+
+              {/* Display About Us Dropdown */}
+              <Menu as="div" className="relative inline-block text-left">
+                <div>
+                  <MenuButton className="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-white hover:text-green-400">
+                    About Us
+                    <ChevronDownIcon
+                      className="-mr-1 ml-2 h-5 w-5"
+                      aria-hidden="true"
+                    />
+                  </MenuButton>
+                </div>
+                <MenuItems className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <MenuItem>
+                    <NavLink
+                      to="/Location"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Location
+                    </NavLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <NavLink
+                      to="/ShopAtHome"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Shop At Home
+                    </NavLink>
+                  </MenuItem>
+                </MenuItems>
+              </Menu>
+
+              {/* Display Reviews and Contact Links */}
+              {navigation.map((item) => (
                 <DisclosureButton
                   key={item.name}
                   as={Link}
                   to={item.href}
                   aria-current={item.current ? "page" : undefined}
                   className={classNames(
-                    "text-gray-700",
+                    "text-white-700",
                     "font-bold",
-                    "rounded-md px-3 py-2 text-sm font-medium",
+                    "text-sm",
+                    "rounded-md px-3 py-2 font-medium",
                     "hover:text-green-400"
                   )}
                 >
@@ -232,7 +413,7 @@ const Header = () => {
           </DisclosurePanel>
         </Disclosure>
       </div>
-      <div className="md:h-[0.5px] md:bg-black md:mb-6"></div>
+      <div className="h-[0.5px] my-3"></div>
     </>
   );
 };

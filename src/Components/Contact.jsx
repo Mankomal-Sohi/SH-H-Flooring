@@ -1,16 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import axios from "axios";
+
 const Contact = () => {
+  const navigate = useNavigate(); // Initialize navigate
   const {
     register,
     handleSubmit,
-    watch,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch("http://localhost:3000/", {
+        method: "POST",
+        body: JSON.stringify(data), // Directly pass the data without wrapping in { data }
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const res = await response.json();
+      if (response.ok) {
+        console.log(res);
+
+        navigate("/ThankYou"); // Redirect after successful submission
+      } else {
+        console.error("Submission failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   return (
     <>
+      {isSubmitting && <div>Loading....</div>}
       <section className="py-6 m-auto lg:py-3 ">
         <div className="max-w-6xl mx-auto p-4 md:p-16 xl:p-20">
           <div className="lg:w-2/3 space-y-5 text-center mx-auto">
@@ -23,90 +48,107 @@ const Contact = () => {
             </p>
           </div>
           <div className="space-y-5 py-5 w-full md:w-1/2 m-auto">
-            <form action="" onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <label for="Firstname" className="sr-only">
-                  FirstName
-                </label>
                 <input
+                  {...register("FirstName", {
+                    required: "This field is required",
+                    pattern: {
+                      value: /^[A-Za-z]+$/i,
+                      message: "Only Alphabets are allowed",
+                    },
+                  })}
                   type="text"
-                  name="FirstName"
                   id="FirstName"
+                  name="FirstName"
                   placeholder="Enter First Name"
                   className="border border-gray-300 text-gray-600 text-sm rounded block focus:ring-0 focus:border-gray-500 w-full p-3"
-                ></input>
-                <label for="Lastname" className="sr-only">
-                  LastName
-                </label>
+                />
+                {errors.FirstName && (
+                  <div className="text-red-500">{errors.FirstName.message}</div>
+                )}
                 <input
+                  {...register("LastName", {
+                    required: "This field is required",
+                    pattern: {
+                      value: /^[A-Za-z]+$/i,
+                      message: "Only Alphabets are allowed",
+                    },
+                  })}
                   type="text"
-                  name="LastName"
                   id="LastName"
+                  name="LastName"
                   placeholder="Enter Last Name"
                   className="border border-gray-300 text-gray-600 text-sm rounded focus:ring-0 focus:border-gray-500 w-full p-3"
-                ></input>
+                />
+                {errors.LastName && (
+                  <div className="text-red-500">{errors.LastName.message}</div>
+                )}
               </div>
-              <label for="Email" className="sr-only">
-                Email
-              </label>
               <input
-                type="text"
-                name="Email"
-                id="Email"
+                {...register("email", {
+                  required: "This field is required",
+                })}
+                type="email"
+                id="email"
+                name="email"
                 placeholder="Enter Email Address"
                 className="border border-gray-300 text-gray-600 text-sm rounded focus:ring-0 focus:border-gray-500 w-full p-3 my-3"
-              ></input>
+              />
+              {errors.email && (
+                <div className="text-red-500">{errors.email.message}</div>
+              )}
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <label for="PhoneNumber" className="sr-only">
-                  Phone Number
-                </label>
                 <input
+                  {...register("PhoneNumber")}
                   type="text"
-                  name="PhoneNumber"
                   id="PhoneNumber"
+                  name="PhoneNumber"
                   placeholder="Enter Phone Number"
                   className="border border-gray-300 text-gray-600 text-sm rounded block focus:ring-0 focus:border-gray-500 w-full p-3"
-                ></input>
-                <label for="PostalCode" className="sr-only">
-                  Postal Code
-                </label>
+                />
                 <input
+                  {...register("PostalCode", {
+                    required: "This field is required",
+                  })}
                   type="text"
-                  name="PostalCode"
                   id="PostalCode"
+                  name="PostalCode"
                   placeholder="Enter Postal Code"
                   className="border border-gray-300 text-gray-600 text-sm rounded focus:ring-0 focus:border-gray-500 w-full p-3"
-                ></input>
+                />
+                {errors.PostalCode && (
+                  <div className="text-red-500">
+                    {errors.PostalCode.message}
+                  </div>
+                )}
               </div>
-              <label for="Comments" className="sr-only">
-                Comments
-              </label>
               <textarea
-                type="text"
-                name="Comments"
+                {...register("Comments")}
                 id="Comments"
+                name="Comments"
                 placeholder="Comments"
                 className="border border-gray-300 text-gray-600 text-sm rounded focus:ring-0 focus:border-gray-500 w-full p-5 my-5"
               ></textarea>
               <div className="flex items-center">
                 <input
+                  {...register("offer")}
                   type="checkbox"
-                  name="Offer"
                   id="Offer"
                   className="mr-3"
-                ></input>
-                <label for="Offer" className="text-gray-600 text-sm my-">
-                  Keep me upto date with latest offers
+                />
+                <label htmlFor="Offer" className="text-gray-600 text-sm">
+                  Keep me up to date with latest offers
                 </label>
               </div>
               <div className="text-center">
                 <input
                   type="submit"
-                  name="send"
-                  id="submit"
+                  disabled={isSubmitting}
                   value="Send"
                   className=" bg-green-500 text-white p-4 w-auto lg:w-1/2 mt-3 inline-block"
-                ></input>
+                />
               </div>
             </form>
           </div>

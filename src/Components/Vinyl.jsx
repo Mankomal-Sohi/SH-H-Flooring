@@ -1,157 +1,157 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Carpet = () => {
+const Vinyl = () => {
   return (
     <>
       <div className="bg-slate-100">
         <div className="relative bg-black">
           <img
             className="w-screen h-60 object-cover opacity-80"
-            src="https://live.staticflickr.com/5445/30519136084_580051599d_b.jpg"
-            alt="carpet"
+            src="https://shallowsky.com/tmp/hardwood-floors/img_8933.jpg"
+            alt="vinyl"
           />
 
           <h1 className="absolute text-3xl text-slate-50 text-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold pb-4">
-            CARPETS <br /> Wide Variety of Styles
+            VINYLS <br /> Wide Variety of Styles
           </h1>
 
           <h2 className="absolute rounded-full w-full max-w-md text-center cursor-pointer text-xl bg-black p-3 m-auto text-white bottom-4 left-1/2 -translate-x-1/2 font-bold">
-            <Link to="#">Browse Carpet</Link>
+            <Link to="#">Browse Vinyl</Link>
           </h2>
         </div>
 
         <div class="grid grid-cols-2 gap-5 gap-y-5 p-10 m-10 md:grid-cols-4">
           <div>
             <figure>
-              <Link to={"/carpet/ArtistSlate"}>
+              <Link to={"/vinyl/Everett Park"}>
                 <img
                   className="object-cover aspect-square"
-                  src="https://c.pxhere.com/photos/d2/2a/carpet_texture_rough_material_fabric_floor_textile_rug-1253220.jpg!d"
+                  src="https://get.pxhere.com/photo/background-colors-design-exterior-granite-marble-pattern-rocks-solid-stone-surface-texture-textured-tiles-royalty-free-images-1551827.jpg"
                 />
               </Link>
-              <figcaption>Artist Slate</figcaption>
+              <figcaption>Everett Park</figcaption>
             </figure>
           </div>
           <div>
             <figure>
-              <Link to={"/carpet/SquarePatterns"}>
-                <img
-                  className="object-cover aspect-square"
-                  src="https://4.bp.blogspot.com/-aYipqafSnmY/UYIf2Iyfm-I/AAAAAAAACNI/BUE38iQcHkA/s1600/carpet23.jpg"
-                />
-              </Link>
-              <figcaption>Square Patterns </figcaption>
-            </figure>
-          </div>
-          <div>
-            <figure>
-              <Link to={"/carpet/ColourfulRays"}>
-                <img
-                  className="object-cover aspect-square"
-                  src="https://get.pxhere.com/photo/texture-floor-pattern-line-red-color-blue-material-textile-art-carpet-flooring-multi-color-bed-sheet-925213.jpg"
-                />
-              </Link>
-              <figcaption>Colourful rays</figcaption>
-            </figure>
-          </div>
-          <div>
-            <figure>
-              <Link to={"/carpet/ColouredBright"}>
-                <img
-                  className="object-cover aspect-square"
-                  src="https://get.pxhere.com/photo/orange-yellow-carpet-brown-line-flooring-pattern-plant-floor-beige-flower-1615569.jpg"
-                />
-              </Link>
-              <figcaption>Coloured Bright</figcaption>
-            </figure>
-          </div>
-          <div>
-            <figure>
-              <Link to={"/carpet/BlackBox"}>
-                <img
-                  className="object-cover aspect-square"
-                  src="https://img00.deviantart.net/aac4/i/2010/289/8/4/seamless_carpet_dark_by_hhh316-d30v2ul.jpg"
-                />
-              </Link>
-              <figcaption>Black box</figcaption>
-            </figure>
-          </div>
-          <div>
-            <figure>
-              <Link to={"/carpet/KnittedLines"}>
-                <img
-                  className="object-cover aspect-square"
-                  src="https://pre00.deviantart.net/183a/th/pre/i/2010/290/3/d/seamless_carpet_texture_by_hhh316-d30xq15.jpg"
-                />
-              </Link>
-              <figcaption>Knitted Lines</figcaption>
-            </figure>
-          </div>
-          <div>
-            <figure>
-              <Link to={"/carpet/TradtionalFeelz"}>
-                <img
-                  className="object-cover aspect-square"
-                  src="https://live.staticflickr.com/2728/4057575737_9fc2cc0fdf_b.jpg"
-                />
-              </Link>
-              <figcaption>Traditional Feelz</figcaption>
-            </figure>
-          </div>
-          <div>
-            <figure>
-              <Link to={"/carpet/WoodenTexture"}>
+              <Link to={"/vinyl/Bedford"}>
                 <img
                   className="object-cover aspect-square"
                   src="https://3.bp.blogspot.com/-MdJZ8hlDVhY/UXl97jMoxFI/AAAAAAAAHRg/xhZLL80ed1E/s1600/parquet-kambala-.png"
                 />
               </Link>
-              <figcaption>Wooden Texture</figcaption>
+              <figcaption>Bedford </figcaption>
             </figure>
           </div>
           <div>
             <figure>
-              <Link to={"/carpet/RosyFlowers"}>
+              <Link to={"/vinyl/CovingtonFalls"}>
                 <img
                   className="object-cover aspect-square"
-                  src="https://get.pxhere.com/photo/plant-texture-flower-purple-petal-pattern-red-produce-pink-fabric-crochet-textile-shrub-carpet-magenta-fibers-tissue-woven-flooring-flowering-plant-land-plant-718218.jpg"
+                  src="https://upload.wikimedia.org/wikipedia/commons/1/14/Wooden_floor.JPG"
                 />
               </Link>
-              <figcaption>Rosy Flowers</figcaption>
+              <figcaption>Covington Falls</figcaption>
             </figure>
           </div>
           <div>
             <figure>
-              <Link to={"/carpet/PatternMatches"}>
+              <Link to={"/vinyl/FoundersTrace"}>
                 <img
-                  className="aspect-square object-cover"
-                  src="https://cdn.pixabay.com/photo/2014/04/05/11/22/red-carpet-315459_960_720.jpg"
+                  className="object-cover aspect-square"
+                  src="https://c.pxhere.com/photos/56/e7/background_board_brown_floor_hardwood_planks_surface_texture-1549003.jpg!d"
                 />
               </Link>
-              <figcaption>Pattern Matches</figcaption>
+              <figcaption>Founders Trace</figcaption>
             </figure>
           </div>
           <div>
             <figure>
-              <Link to={"/carpet/RuggedDesign"}>
+              <Link to={"/vinyl/WandersLoop"}>
                 <img
-                  className="aspect-square object-cover"
-                  src="https://p0.pikist.com/photos/645/901/carpet-orient-pattern-oriental-carpet-retired-carpet-dealers-turkey-persian-rug-carpet-weaving-center.jpg"
+                  className="object-cover aspect-square"
+                  src="https://img00.deviantart.net/aac4/i/2010/289/8/4/seamless_carpet_dark_by_hhh316-d30v2ul.jpg"
                 />
               </Link>
-              <figcaption>Rugged Design</figcaption>
+              <figcaption>WandersLoop</figcaption>
             </figure>
           </div>
           <div>
             <figure>
-              <Link to={"/carpet/UniqueBorders"}>
+              <Link to={"/vinyl/Adventure"}>
                 <img
-                  className="aspect-square object-cover"
-                  src="https://p0.pikist.com/photos/453/206/rhodes-rugs-carpets-rug-carpet-texture-textile-pattern-interior.jpg"
+                  className="object-cover aspect-square"
+                  src="https://c1.staticflickr.com/3/2240/2048662430_fdc1d72d03_z.jpg?zz=1"
                 />
               </Link>
-              <figcaption>Unique Borders</figcaption>
+              <figcaption>Adventure</figcaption>
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <Link to={"/vinyl/Aerial"}>
+                <img
+                  className="object-cover aspect-square"
+                  src="https://get.pxhere.com/photo/tree-nature-wood-texture-plank-floor-trunk-old-wall-village-clear-gray-jars-figure-hardwood-boards-cracks-the-background-flooring-sawn-timber-the-structure-of-the-wood-flooring-laminate-flooring-wood-stain-jars-trunk-1205453.jpg"
+                />
+              </Link>
+              <figcaption>Aerial</figcaption>
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <Link to={"/vinyl/Archipel"}>
+                <img
+                  className="object-cover aspect-square"
+                  src="https://3.bp.blogspot.com/-MdJZ8hlDVhY/UXl97jMoxFI/AAAAAAAAHRg/xhZLL80ed1E/s1600/parquet-kambala-.png"
+                />
+              </Link>
+              <figcaption>Archipel</figcaption>
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <Link to={"/vinyl/EvolutionPlank"}>
+                <img
+                  className="object-cover aspect-square"
+                  src="https://c.pxhere.com/photos/d6/97/tiles_tile_wood_table_texture_timber_floor_decor-1002125.jpg!d"
+                />
+              </Link>
+              <figcaption>Evolution Plank</figcaption>
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <Link to={"/vinyl/DiscoveryRidge"}>
+                <img
+                  className="aspect-square object-cover"
+                  src="https://get.pxhere.com/photo/house-wood-wall-wood-stain-hardwood-wood-flooring-lumber-plank-flooring-floor-plywood-garapa-laminate-flooring-1457089.jpg"
+                />
+              </Link>
+              <figcaption>Discovery Ridge</figcaption>
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <Link to={"/vinyl/GlobeTrotter"}>
+                <img
+                  className="aspect-square object-cover"
+                  src="https://c.pxhere.com/photos/28/84/wood_texture_wooden_texture-661691.jpg!d"
+                />
+              </Link>
+              <figcaption>Globe Trotter</figcaption>
+            </figure>
+          </div>
+          <div>
+            <figure>
+              <Link to={"/vinyl/Nautika"}>
+                <img
+                  className="aspect-square object-cover"
+                  src="https://c.pxhere.com/photos/d4/36/wood_desk_wallpaper_desktop_picture-1187816.jpg!d"
+                />
+              </Link>
+              <figcaption>Nautika</figcaption>
             </figure>
           </div>
         </div>
@@ -160,4 +160,4 @@ const Carpet = () => {
   );
 };
 
-export default Carpet;
+export default Vinyl;

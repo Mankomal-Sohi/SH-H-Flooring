@@ -1,90 +1,66 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App.jsx";
-import Layout from "./Layout.jsx";
-import Carpet from "./Components/Carpet.jsx";
-import CarpetTile from "./Components/CarpetTile.jsx";
+import React from "react";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
+import Layout from "./Components/Layout.jsx";
+import ReactDOM from "react-dom/client";
 import Home from "./Components/Home.jsx";
 import "./index.css";
-import KitchenRemodeling from "./Components/KitchenRemodeling.jsx";
-import BathroomRemodeling from "./Components/BathroomRemodeling.jsx";
-import Header from "./Components/Header.jsx";
-import Financing from "./Components/Financing.jsx";
-import Reviews from "./Components/Reviews.jsx";
-import ResidentialPainting from "./Components/ResidentialPainting.jsx";
-import Inspiration from "./Components/Inspiration.jsx";
+import "./App.css";
+import Carpet from "./Components/Carpet.jsx";
+import CarpetTile from "./Components/CarpetTile.jsx";
+import About from "./Components/About.jsx";
 import Contact from "./Components/Contact.jsx";
-import Location from "./Components/Location.jsx";
-import Services from "./Components/Services.jsx";
+import Reviews from "./Components/Reviews.jsx";
 import ShopAtHome from "./Components/ShopAtHome.jsx";
+import Location from "./Components/Location.jsx";
+import ThankYou from "./Components/ThankYou.jsx";
+import CarpetDetail from "./Components/CarpetDetail.jsx";
+import CarpetInstallation from "./Components/CarpetInstallation.jsx";
+import Form from "./Components/Form.jsx";
+import HardwoodInstallation from "./Components/HardwoodInstallation.jsx";
+import HardwoodDetail from "./Components/HardwoodDetail.jsx";
+import Hardwood from "./Components/Hardwood.jsx";
+import CarpetTileDetail from "./Components/CarpetTileDetail.jsx";
+import Laminate from "./Components/Laminate.jsx";
+import Vinyl from "./Components/Vinyl.jsx";
+import VinylDetail from "./Components/VinylDetail.jsx";
+import LaminateDetail from "./Components/LaminateDetail.jsx";
+import Paint from "./Components/Paint.jsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "",
-        element: <Home />,
-      },
-      {
-        path: "carpet",
-        element: <Carpet />,
-      },
-      {
-        path: "carpetTile",
-        element: <CarpetTile />,
-      },
-      {
-        path: "KitchenRemodeling",
-        element: <KitchenRemodeling />,
-      },
-      {
-        path: "BathroomRemodeling",
-        element: <BathroomRemodeling />,
-      },
-      {
-        path: "Header",
-        element: <Header />,
-      },
-      {
-        path: "Financing",
-        element: <Financing />,
-      },
-      {
-        path: "Location",
-        element: <Location />,
-      },
-      {
-        path: "Services",
-        element: <Services />,
-      },
-      {
-        path: "Reviews",
-        element: <Reviews />,
-      },
-      {
-        path: "ResidentialPainting",
-        element: <ResidentialPainting />,
-      },
-      {
-        path: "ShopAtHome",
-        element: <ShopAtHome />,
-      },
-      {
-        path: "Inspiration",
-        element: <Inspiration />,
-      },
-      {
-        path: "Contact",
-        element: <Contact />,
-      },
-    ],
-  },
-]);
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route path="" element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="carpet" element={<Carpet />} />
+      <Route path="carpetTile" element={<CarpetTile />} />
+      <Route path="Form" element={<Form />} />
+      <Route path="HardwoodInstallation" element={<HardwoodInstallation />} />
+      <Route path="CarpetInstallation" element={<CarpetInstallation />} />
+      <Route path="Reviews" element={<Reviews />} />
+      <Route path="ShopAtHome" element={<ShopAtHome />} />
+      <Route path="Location" element={<Location />} />
+      <Route path="ThankYou" element={<ThankYou />} />
+      <Route path="Hardwood" element={<Hardwood />} />
+      <Route path="Laminate" element={<Laminate />} />
+      <Route path="Paint" element={<Paint />} />
+      <Route path="Vinyl" element={<Vinyl />} />
+      <Route path="/carpet/:id" element={<CarpetDetail />} />
+      <Route path="/vinyl/:id" element={<VinylDetail />} />
+      <Route path="/hardwood/:id" element={<HardwoodDetail />} />
+      <Route path="/carpetTile/:id" element={<CarpetTileDetail />} />
+      <Route path="/laminate/:id" element={<LaminateDetail />} />
+    </Route>
+  )
+);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>
+  </React.StrictMode>
 );

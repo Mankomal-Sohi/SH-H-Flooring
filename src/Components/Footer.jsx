@@ -1,53 +1,66 @@
 import React from "react";
-import logo from "/logo.svg";
-import { GrLinkTop } from "react-icons/gr";
+import { FaFacebook } from "react-icons/fa";
 
-import { Link } from "react-router-dom";
-
-const Footer = () => {
+import { Link, NavLink } from "react-router-dom";
+export default function Footer() {
   return (
     <footer className="bg-black border-y">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
-            <Link to="/" className="flex items-center">
-              <img src={logo} className="mr-3 h-16" alt="Logo" />
-            </Link>
-          </div>
-          <div className="grid grid-cols-3 gap-8 sm:gap-6 sm:grid-cols-3">
+          {/* <div className="mb-6 md:mb-0">
+                        <Link to="/" className="flex items-center ">
+                            <img
+                                src="./public/logo.svg"
+                                className="mr-3 mb-0 h-80 "
+                                alt="Logo"
+                            />
+                        </Link>
+                    </div> */}
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
               <h2 className="mb-6 text-sm font-semibold text-white uppercase">
                 Resources
               </h2>
-              <ul className="text-stone-50 font-medium">
+              <ul className="text-slate-100 font-medium">
                 <li className="mb-4">
                   <Link to="/" className="hover:underline">
                     Home
                   </Link>
                 </li>
-                <li className="mb-4">
-                  <Link to="/Services" className="hover:underline">
-                    Services
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link to="/About" className="hover:underline">
-                    About Us
-                  </Link>
-                </li>
                 <li>
-                  <Link to="/Contact" className="hover:underline">
-                    Contact Us
+                  <Link to="/about" className="hover:underline">
+                    Company
                   </Link>
                 </li>
               </ul>
             </div>
-
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-stone-50 uppercase">
+              <h2 className="mb-6 text-sm font-semibold text-white uppercase">
+                Services
+              </h2>
+              <ul className="text-slate-100 font-medium">
+                <li className="mb-4">
+                  <a
+                    href="https://github.com/hiteshchoudhary"
+                    className="hover:underline"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Products
+                  </a>
+                </li>
+                <li>
+                  <Link to="/" className="hover:underline">
+                    Reviews
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="mb-6 text-sm font-semibold text-white uppercase">
                 Legal
               </h2>
-              <ul className="text-stone-50 font-medium">
+              <ul className="text-slate-100 font-medium">
                 <li className="mb-4">
                   <Link to="#" className="hover:underline">
                     Privacy Policy
@@ -60,26 +73,19 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div>
-              <span className="text-white border-solid border-2 border-white p-2  inline-flex justify-center items-center">
-                <Link to="/">
-                  <GrLinkTop />
-                </Link>
-              </span>
-            </div>
           </div>
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center">
+          <span className="text-sm text-white sm:text-center">
             © 2024
-            <a href="#" className="hover:underline">
-              floorMasters
-            </a>
-            . All Rights Reserved.
+            {/* <a href="https://hiteshchoudhary.com/" className="hover:underline">
+                        hiteshchoudhary
+                    </a> */}
+            SH&H Carpet Solutions. All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
-            <Link to="#" className="text-gray-500 hover:text-gray-900">
+            <Link to="#" className="text-slate-300 hover:text-white">
               <svg
                 className="w-4 h-4"
                 aria-hidden="true"
@@ -95,7 +101,7 @@ const Footer = () => {
               </svg>
               <span className="sr-only">Facebook page</span>
             </Link>
-            <Link to="#" className="text-gray-500">
+            <Link to="#" className="text-slate-300 hover:text-white">
               <svg
                 className="w-4 h-4"
                 aria-hidden="true"
@@ -107,7 +113,7 @@ const Footer = () => {
               </svg>
               <span className="sr-only">Discord community</span>
             </Link>
-            <Link to="#" className="text-gray-500">
+            <Link to="#" className="text-slate-300 hover:text-white">
               <svg
                 className="w-4 h-4"
                 aria-hidden="true"
@@ -123,7 +129,7 @@ const Footer = () => {
               </svg>
               <span className="sr-only">Twitter page</span>
             </Link>
-            <Link to="#" className="text-gray-500">
+            <Link to="#" className="text-slate-300 hover:text-white">
               <svg
                 className="w-4 h-4"
                 aria-hidden="true"
@@ -139,7 +145,7 @@ const Footer = () => {
               </svg>
               <span className="sr-only">GitHub account</span>
             </Link>
-            <Link to="#" className="text-gray-500">
+            <Link to="#" className="text-slate-300 hover:text-white">
               <svg
                 className="w-4 h-4"
                 aria-hidden="true"
@@ -160,6 +166,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

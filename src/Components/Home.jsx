@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import Form from "./Form";
+import { BsChatText } from "react-icons/bs";
 const Home = () => {
   return (
     <div>
@@ -27,8 +28,8 @@ const Home = () => {
       </div>
 
       <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3 my-3 mx-14">
-        <div className="relative">
-          <figure>
+        <div className="relative flex items-center justify-center">
+          <figure className="relative">
             <img
               className="object-cover aspect-square h-80 w-72"
               src="https://www.chestnutflooring.ca/wp-content/uploads/2021/05/Ambiances-Engineered-Hardwood-Flooring-Collection-1024x663.jpg"
@@ -36,7 +37,7 @@ const Home = () => {
             />
             <figcaption className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
               <Link
-                to="#"
+                to="/Hardwood"
                 className="bg-white border-solid p-3 font-semibold hover:text-green-500 w-48 block "
               >
                 HARDWOOD
@@ -44,8 +45,8 @@ const Home = () => {
             </figcaption>
           </figure>
         </div>
-        <div className="relative">
-          <figure>
+        <div className="relative flex items-center justify-center">
+          <figure className="relative">
             <img
               className="object-cover aspect-square h-80 w-72"
               src="https://citytile.ca/wp-content/uploads/2018/09/Armstrong_LVT_2013_1334_JatobaMahoganyWEB.jpg"
@@ -53,7 +54,7 @@ const Home = () => {
             />
             <figcaption className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
               <Link
-                to="#"
+                to="/Vinyl"
                 className="bg-white  border-solid p-3 font-semibold hover:text-green-500 w-48 block"
               >
                 LUXURY_VINYL
@@ -61,8 +62,8 @@ const Home = () => {
             </figcaption>
           </figure>
         </div>
-        <div className="relative">
-          <figure>
+        <div className="relative flex items-center justify-center">
+          <figure className="relative">
             <img
               className="object-cover aspect-square h-80 w-72"
               src="https://i.pinimg.com/originals/88/f4/ce/88f4cef40f0495b40b0d796ccbd21d2d.jpg"
@@ -70,7 +71,7 @@ const Home = () => {
             />
             <figcaption className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
               <Link
-                to="#"
+                to="/Carpet"
                 className="bg-white  border-solid p-3 font-semibold hover:text-green-500 w-48 block"
               >
                 CARPET
@@ -78,8 +79,8 @@ const Home = () => {
             </figcaption>
           </figure>
         </div>
-        <div className="relative">
-          <figure>
+        <div className="relative flex items-center justify-center">
+          <figure className="relative">
             <img
               className="object-cover aspect-square h-80 w-72"
               src="https://i.pinimg.com/originals/e1/c6/01/e1c601bb3a833ddf4a7801b23067295d.jpg"
@@ -87,7 +88,7 @@ const Home = () => {
             />
             <figcaption className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
               <Link
-                to="#"
+                to="/Paint"
                 className="bg-white  border-solid p-3 font-semibold hover:text-green-500 w-48 block"
               >
                 PAINT
@@ -95,8 +96,8 @@ const Home = () => {
             </figcaption>
           </figure>
         </div>
-        <div className="relative">
-          <figure>
+        <div className="relative flex items-center justify-center">
+          <figure className="relative">
             <img
               className="object-cover aspect-square h-80 w-72"
               src="https://homespure.com/wp-content/uploads/2020/09/traditional-white-laminate-flooring.jpg"
@@ -104,7 +105,7 @@ const Home = () => {
             />
             <figcaption className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
               <Link
-                to="#"
+                to="/Laminate"
                 className="bg-white  border-solid p-3 font-semibold hover:text-green-500 w-48 block"
               >
                 LAMINATE
@@ -142,7 +143,7 @@ const Home = () => {
               </h2>
               <div className="text-center mt-8 md:mt-12">
                 <h2 className="w-48 md:w-56 text-lg md:text-xl text-white bg-green-600 p-2 hover:bg-green-900 inline-block">
-                  <Link to="#">Contact Us</Link>
+                  <Link to="/contact">Contact Us</Link>
                 </h2>
               </div>
             </figcaption>
@@ -168,16 +169,24 @@ const Home = () => {
               </h2>
               <div className="text-center mt-8 md:mt-12">
                 <h2 className="w-48 md:w-56 text-lg md:text-xl text-white bg-green-600 p-2 hover:bg-green-900 inline-block">
-                  <Link to="#">Get Started</Link>
+                  <Link to="/ShopAtHome">Get Started</Link>
                 </h2>
               </div>
             </figcaption>
           </figure>
         </div>
       </div>
-      <div className="request-form">
+      <div className="request-form bg-slate-200 p-2">
         <Form />
       </div>
+      {/* Fixed "Text Us" Button */}
+      <Link
+        to="/contact" // Adjust the route as necessary
+        className="fixed h-12  bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition duration-300 flex items-center"
+      >
+        <BsChatText className="mr-2" />
+        Text Us
+      </Link>
     </div>
   );
 };

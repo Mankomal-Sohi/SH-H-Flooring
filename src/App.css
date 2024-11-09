@@ -1,0 +1,9 @@
+.red {
+  color: red;
+  font-size: x-small;
+}
+
+.zoom {
+  transform: scale(1.5); /* Adjust the scale as needed */
+  transition: transform 0.3s ease; /* Smooth transition */
+}

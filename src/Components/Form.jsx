@@ -1,11 +1,34 @@
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 export default function Form() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const navigate = useNavigate(); // Initialize navigate
+
+  const onSubmit = async (data) => {
+    let r = await fetch("http://localhost:3000/", {
+      method: "POST",
+      body: JSON.stringify({ data }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    let res = await r.text();
+    console.log(data, res);
+    navigate("/ThankYou");
+  };
+
   return (
-    <form>
+    <form action="" onSubmit={handleSubmit(onSubmit)}>
       <div className="space-y-12 m-10 ">
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-center font-semibold leading-7 text-gray-900 text-4xl">
+          <h2 className="text-center font-semibold leading-7 text-gray-900 text-xl md:text-2xl lg:text-4xl">
             Request A Free Estimate
           </h2>
           <p className=" text-center mt-4 text-sm font-serif font-3xl leading-6 text-gray-600">
@@ -17,12 +40,24 @@ export default function Form() {
               <div className="mt-2 border border-gray-900 ">
                 <input
                   placeholder="*First Name"
-                  id="First-name"
-                  name="first-name"
+                  id="firstName"
+                  name="firstName"
                   type="text"
+                  {...register("firstName", {
+                    required: {
+                      value: true,
+                      message: " This field is required",
+                    },
+                  })}
                   autoComplete="given-name"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
+                {errors.firstName && (
+                  <div className="text-red-600">
+                    {" "}
+                    {errors.firstName.message}
+                  </div>
+                )}
               </div>
             </div>
 
@@ -30,12 +65,21 @@ export default function Form() {
               <div className="mt-2 border border-gray-900 ">
                 <input
                   placeholder="*Last Name"
-                  id="Last-name"
-                  name="last-name"
+                  id="lastName"
+                  name="lastName"
                   type="text"
+                  {...register("lastName", {
+                    required: {
+                      value: true,
+                      message: " This field is required",
+                    },
+                  })}
                   autoComplete="family-name"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
+                {errors.lastName && (
+                  <div className="text-red-600"> {errors.lastName.message}</div>
+                )}
               </div>
             </div>
 
@@ -46,9 +90,23 @@ export default function Form() {
                   id="email"
                   name="email"
                   type="email"
+                  {...register("emailAddress", {
+                    required: "This field is required",
+                    validate: {
+                      validEmail: (value) =>
+                        (value.includes("@") && value.includes(".com")) ||
+                        "Enter a valid email address",
+                    },
+                  })}
                   autoComplete="email"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
+                {errors.emailAddress && (
+                  <div className="text-red-600">
+                    {" "}
+                    {errors.emailAddress.message}
+                  </div>
+                )}
               </div>
             </div>
 
@@ -88,9 +146,13 @@ export default function Form() {
                   id="city"
                   name="city"
                   type="text"
+                  {...register("city")}
                   autoComplete="address-level2"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
+                {errors.city && (
+                  <div className="text-red-600"> {errors.city.message}</div>
+                )}
               </div>
             </div>
 
@@ -114,9 +176,21 @@ export default function Form() {
                   id="postal-code"
                   name="postal-code"
                   type="text"
+                  {...register("postalCode", {
+                    required: {
+                      value: true,
+                      message: " This field is required",
+                    },
+                  })}
                   autoComplete="postal-code"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
+                {errors.postalCode && (
+                  <div className="text-red-600">
+                    {" "}
+                    {errors.postalCode.message}
+                  </div>
+                )}
               </div>
             </div>
 

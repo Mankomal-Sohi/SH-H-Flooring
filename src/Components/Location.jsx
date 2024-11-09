@@ -12,21 +12,21 @@ const Location = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 py-8 gap-3">
           <div className="items-center m-auto">
-            <h1 className="font-bold text-lg md:text-2xl">Floor Masters</h1>
+            <h1 className="font-bold text-lg md:text-2xl">
+              SH&H Carpet Solutions
+            </h1>
             <div className="flex items-center py-3">
               <span>
                 <FaLocationDot />
               </span>
 
-              <h2 className="px-3">
-                111 Portage Ave, Saint Eustache, MB R0H 1H0{" "}
-              </h2>
+              <h2 className="px-3">Findlay Creek, Ottawa, K1X 0J3</h2>
             </div>
             <div className="flex items-center py-3">
               <span>
                 <FaPhoneAlt />
               </span>
-              <h2 className="px-3">604-554-6789 </h2>
+              <h2 className="px-3">343-333-7127 </h2>
             </div>
           </div>
           <div>
@@ -37,7 +37,7 @@ const Location = () => {
               scrolling="no"
               marginheight="0"
               marginwidth="0"
-              src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=111%20Portage%20Ave,%20Saint%20Eustache,%20MB%20R0H%201H0+()&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              src="https://maps.google.com/maps?width=720&amp;height=400&amp;hl=en&amp;q=Findlay%20Creek%20Ottawa,%20K1X%200J3+(SH&amp;H%20Carpet%20Solutions)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             >
               <a href="https://www.gps.ie/">gps vehicle tracker</a>
             </iframe>
