@@ -39,7 +39,7 @@ export default function Form() {
             <div className="sm:col-span-3 ">
               <div className="mt-2 border border-gray-900 ">
                 <input
-                  placeholder="*First Name"
+                  placeholder="* First Name"
                   id="firstName"
                   name="firstName"
                   type="text"
@@ -50,7 +50,7 @@ export default function Form() {
                     },
                   })}
                   autoComplete="given-name"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block  p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
                 {errors.firstName && (
                   <div className="text-red-600">
@@ -64,7 +64,7 @@ export default function Form() {
             <div className="sm:col-span-3">
               <div className="mt-2 border border-gray-900 ">
                 <input
-                  placeholder="*Last Name"
+                  placeholder="* Last Name"
                   id="lastName"
                   name="lastName"
                   type="text"
@@ -75,7 +75,7 @@ export default function Form() {
                     },
                   })}
                   autoComplete="family-name"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2"
                 />
                 {errors.lastName && (
                   <div className="text-red-600"> {errors.lastName.message}</div>
@@ -86,7 +86,7 @@ export default function Form() {
             <div className="sm:col-span-4">
               <div className="mt-2 border border-gray-900 ">
                 <input
-                  placeholder="*Email Address"
+                  placeholder="* Email Address"
                   id="email"
                   name="email"
                   type="email"
@@ -99,7 +99,7 @@ export default function Form() {
                     },
                   })}
                   autoComplete="email"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 p-2"
                 />
                 {errors.emailAddress && (
                   <div className="text-red-600">
@@ -117,7 +117,7 @@ export default function Form() {
                   id="country"
                   name="country"
                   autoComplete="country-name"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>United States</option>
                   <option>Canada</option>
@@ -134,7 +134,7 @@ export default function Form() {
                   name="street-address"
                   type="text"
                   autoComplete="street-address"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -148,7 +148,7 @@ export default function Form() {
                   type="text"
                   {...register("city")}
                   autoComplete="address-level2"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
                 {errors.city && (
                   <div className="text-red-600"> {errors.city.message}</div>
@@ -164,7 +164,7 @@ export default function Form() {
                   name="region"
                   type="text"
                   autoComplete="address-level1"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function Form() {
             <div className="sm:col-span-2">
               <div className="mt-2 border border-gray-900 ">
                 <input
-                  placeholder="*Postal Code"
+                  placeholder="* Postal Code"
                   id="postal-code"
                   name="postal-code"
                   type="text"
@@ -183,7 +183,7 @@ export default function Form() {
                     },
                   })}
                   autoComplete="postal-code"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
                 {errors.postalCode && (
                   <div className="text-red-600">
@@ -207,14 +207,14 @@ export default function Form() {
                   id="date"
                   name="date"
                   autoComplete="preffered-date"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 ></input>
               </div>
             </div>
             <div className="sm:col-span-3">
               <label
                 htmlFor="time"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block p-2 text-sm font-medium leading-6 text-gray-900"
               >
                 Preffered Time
               </label>
@@ -224,7 +224,7 @@ export default function Form() {
                   id="time"
                   name="time"
                   autoComplete="preffered-time"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                   <option>Morning</option>
                   <option>Afternoon</option>

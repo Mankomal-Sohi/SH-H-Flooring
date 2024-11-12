@@ -10,7 +10,7 @@ const HardwoodInstallation = () => {
           src="https://www.carpetguys.com/blog/wp-content/uploads/2021/02/carpet-installation-tools-scaled.jpg"
         />
         <h1 className="absolute text-3xl text-slate-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-extrabold">
-          CARPET INSTALLATION
+          HARDWOOD INSTALLATION
         </h1>
         <h2 className="absolute rounded-full w-full max-w-md text-center cursor-pointer text-xl bg-black p-3 m-auto text-white bottom-4 left-1/2 -translate-x-1/2 font-bold">
           <Link to="/Form">Request a free estimate !!</Link>

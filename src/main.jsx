@@ -22,6 +22,7 @@ import CarpetDetail from "./Components/CarpetDetail.jsx";
 import CarpetInstallation from "./Components/CarpetInstallation.jsx";
 import Form from "./Components/Form.jsx";
 import HardwoodInstallation from "./Components/HardwoodInstallation.jsx";
+import LaminateInstallation from "./Components/LaminateInstallation.jsx";
 import HardwoodDetail from "./Components/HardwoodDetail.jsx";
 import Hardwood from "./Components/Hardwood.jsx";
 import CarpetTileDetail from "./Components/CarpetTileDetail.jsx";
@@ -30,6 +31,9 @@ import Vinyl from "./Components/Vinyl.jsx";
 import VinylDetail from "./Components/VinylDetail.jsx";
 import LaminateDetail from "./Components/LaminateDetail.jsx";
 import Paint from "./Components/Paint.jsx";
+import ResidentialPainting from "./Components/ResidentialPainting.jsx";
+import VinylInstallation from "./Components/VinylInstallation.jsx";
+import Services from "./Components/Services.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -48,6 +52,9 @@ const router = createBrowserRouter(
       <Route path="ThankYou" element={<ThankYou />} />
       <Route path="Hardwood" element={<Hardwood />} />
       <Route path="Laminate" element={<Laminate />} />
+      <Route path="LaminateInstallation" element={<LaminateInstallation />} />
+      <Route path="VinylInstallation" element={<VinylInstallation />} />
+      <Route path="ResidentialPainting" element={<ResidentialPainting />} />
       <Route path="Paint" element={<Paint />} />
       <Route path="Vinyl" element={<Vinyl />} />
       <Route path="/carpet/:id" element={<CarpetDetail />} />
@@ -55,6 +62,7 @@ const router = createBrowserRouter(
       <Route path="/hardwood/:id" element={<HardwoodDetail />} />
       <Route path="/carpetTile/:id" element={<CarpetTileDetail />} />
       <Route path="/laminate/:id" element={<LaminateDetail />} />
+      <Route path="Services" element={<Services />} />
     </Route>
   )
 );
