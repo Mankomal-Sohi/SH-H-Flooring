@@ -12,16 +12,25 @@ export default function InfoForm() {
   const navigate = useNavigate(); // Initialize navigate
 
   const onSubmit = async (data) => {
-    let r = await fetch("http://localhost:3000/", {
-      method: "POST",
-      body: JSON.stringify({ data }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    let res = await r.text();
-    console.log(data, res);
-    navigate("/ThankYou");
+    try {
+      const response = await fetch("http://localhost:3000/info-form", {
+        method: "POST",
+        body: JSON.stringify(data), // Directly pass the data without wrapping in { data }
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const res = await response.json();
+      if (response.ok) {
+        console.log(res);
+
+        navigate("/ThankYou"); // Redirect after successful submission
+      } else {
+        console.error("Submission failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
