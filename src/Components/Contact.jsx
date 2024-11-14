@@ -13,7 +13,7 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("http://localhost:3000/", {
+      const response = await fetch("https://sh-h-flooring.vercel.app/contact", {
         method: "POST",
         body: JSON.stringify(data), // Directly pass the data without wrapping in { data }
         headers: {

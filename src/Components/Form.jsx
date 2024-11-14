@@ -12,7 +12,7 @@ export default function Form() {
   const navigate = useNavigate(); // Initialize navigate
 
   const onSubmit = async (data) => {
-    let r = await fetch("http://localhost:3000/", {
+    let r = await fetch("http://localhost:3000/free-estimate", {
       method: "POST",
       body: JSON.stringify({ data }),
       headers: {
@@ -113,6 +113,7 @@ export default function Form() {
             <div className="sm:col-span-3">
               <div className="mt-2 border border-gray-900 ">
                 <select
+                  {...register("country")}
                   placeholder="Country"
                   id="country"
                   name="country"
@@ -129,11 +130,12 @@ export default function Form() {
             <div className="col-span-full">
               <div className="mt-2 border border-gray-900 ">
                 <input
+                  {...register("streetaddress")}
                   placeholder="Street Address"
-                  id="street-address"
-                  name="street-address"
+                  id="streetaddress"
+                  name="streetaddress"
                   type="text"
-                  autoComplete="street-address"
+                  autoComplete="streetaddress"
                   className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>

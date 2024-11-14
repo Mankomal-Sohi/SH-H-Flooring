@@ -14,7 +14,13 @@ console.log("Loaded environment variables:", process.env); // This will print al
 const app = express();
 const PORT = 3000;
 
-app.use(cors({ origin: "*" }));
+app.use(
+  cors({
+    origin: ["https://sh-h-flooring.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 // Configure body-parser to handle post requests
 app.use(bodyParser.json());
@@ -30,7 +36,7 @@ app.get("/", (req, res) => {
 });
 
 // Handle form submissions and log them to the console
-app.post("/", async (req, res) => {
+app.post("/contact", async (req, res) => {
   try {
     const user = new Users(req.body);
     console.log("Creating User", req.body);
@@ -75,17 +81,7 @@ app.post("/info-form", async (req, res) => {
     });
   }
 });
-app.post("/info-form", (req, res) => {
-  console.log(`Received Information:
-    First Name: ${req.body.FirstName},
-    Last Name:${req.body.LastName},
-     Email Address: ${req.body.email},
-     Phone: ${req.body.PhoneNumber}
-     Postal Code:${req.body.PostalCode}
-     Comments: ${req.body.Comments}
-   `);
-  res.json(req.body);
-});
+
 // Start server on specified PORT
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

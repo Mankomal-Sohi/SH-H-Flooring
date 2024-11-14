@@ -2,9 +2,11 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
   id: Number,
-  FirstName: String,
-  LastName: String,
-  email: String,
+  firstName: String,
+  lastName: String,
+  emailAddress: String,
+  country: String,
+  streetaddress: String,
   PhoneNumber: Number,
   PostalCode: String,
   Comments: String,
