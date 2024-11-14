@@ -16,7 +16,7 @@ const PORT = 3000;
 
 app.use(
   cors({
-    origin: ["https://sh-h-flooring.vercel.app/"],
+    origin: ["https://sh-h-flooring.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
   })
