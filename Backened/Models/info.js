@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 const infoSchema = new Schema({
   id: Number,
-  FirstName: String,
-  LastName: String,
-  Email: String,
+  firstName: String,
+  lastName: String,
+  emailAddress: String,
   PhoneNumber: Number,
-  PostalCode: String,
+  postalCode: String,
   Comments: String,
 });
 

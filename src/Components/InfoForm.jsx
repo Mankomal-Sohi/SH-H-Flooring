@@ -46,8 +46,8 @@ export default function InfoForm() {
               <div className="mt-2 border border-gray-900 ">
                 <input
                   placeholder="*First Name"
-                  id="First-name"
-                  name="first-name"
+                  id="FirstName"
+                  name="FirstName"
                   type="text"
                   {...register("firstName", {
                     required: {
@@ -71,8 +71,8 @@ export default function InfoForm() {
               <div className="mt-2 border border-gray-900 ">
                 <input
                   placeholder="*Last Name"
-                  id="Last-name"
-                  name="last-name"
+                  id="LastName"
+                  name="LastName"
                   type="text"
                   {...register("lastName", {
                     required: {
@@ -93,8 +93,8 @@ export default function InfoForm() {
               <div className="mt-2 border border-gray-900 ">
                 <input
                   placeholder="*Email Address"
-                  id="email"
-                  name="email"
+                  id="Email"
+                  name="Email"
                   type="email"
                   {...register("emailAddress", {
                     required: "This field is required",
@@ -119,9 +119,10 @@ export default function InfoForm() {
             <div className="sm:col-span-2">
               <div className="mt-2 border border-gray-900 ">
                 <input
+                  {...register("PhoneNumber")}
                   placeholder="Phone"
-                  id="region"
-                  name="region"
+                  id="PhoneNumber"
+                  name="PhoneNumber"
                   type="text"
                   autoComplete="phone"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-900 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -133,8 +134,8 @@ export default function InfoForm() {
               <div className="mt-2 border border-gray-900 ">
                 <input
                   placeholder="*Postal Code"
-                  id="postal-code"
-                  name="postal-code"
+                  id="PostalCode"
+                  name="PostalCode"
                   type="text"
                   {...register("postalCode", {
                     required: {
@@ -158,9 +159,10 @@ export default function InfoForm() {
         <div className="col-span-full">
           <div className="mt-2 border mx-auto border-gray-900  max-w-2xl ">
             <textarea
+              {...register("Comments")}
               placeholder="Comments"
-              id="comments"
-              name="comments"
+              id="Comments"
+              name="Comments"
               rows={3}
               className=" placeholder:text-gray-600 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               defaultValue={""}

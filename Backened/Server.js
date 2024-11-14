@@ -14,7 +14,7 @@ console.log("Loaded environment variables:", process.env); // This will print al
 const app = express();
 const PORT = 3000;
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: "*" }));
 
 // Configure body-parser to handle post requests
 app.use(bodyParser.json());
@@ -74,6 +74,17 @@ app.post("/info-form", async (req, res) => {
       error: err,
     });
   }
+});
+app.post("/info-form", (req, res) => {
+  console.log(`Received Information:
+    First Name: ${req.body.FirstName},
+    Last Name:${req.body.LastName},
+     Email Address: ${req.body.email},
+     Phone: ${req.body.PhoneNumber}
+     Postal Code:${req.body.PostalCode}
+     Comments: ${req.body.Comments}
+   `);
+  res.json(req.body);
 });
 // Start server on specified PORT
 app.listen(PORT, () => {
