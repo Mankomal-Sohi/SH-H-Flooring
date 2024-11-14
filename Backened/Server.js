@@ -1,10 +1,12 @@
-import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-import mongoose from "mongoose";
-import Users from "./Models/user.js";
-import Info from "./Models/info.js";
-import dotenv from "dotenv";
+const express= require("express");
+const bodyParser= require("body-parser");
+const cors=require("cors");
+const mongoose=require("mongoose")
+
+const dotenv=require("dotenv")
+const Users= require("./Models/user.js");
+const Info = require("./Models/info.js");
+
 //load env variables
 dotenv.config({ path: "./.env" });
 console.log("Mongo URI:", process.env.MONGO_URI);

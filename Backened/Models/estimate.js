@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose=require("mongoose");
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
   id: Number,
@@ -12,4 +12,4 @@ const userSchema = new Schema({
   Comments: String,
 });
 
-export default mongoose.model("Users", userSchema);
+module.exports= mongoose.model("Users", userSchema);

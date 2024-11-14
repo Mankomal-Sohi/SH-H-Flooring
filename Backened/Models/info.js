@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose=require("mongoose");
 const Schema = mongoose.Schema;
 const infoSchema = new Schema({
   id: Number,
@@ -10,4 +10,4 @@ const infoSchema = new Schema({
   Comments: String,
 });
 
-export default mongoose.model("Info", infoSchema);
+module.exports= mongoose.model("Info", infoSchema);
