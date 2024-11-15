@@ -4,7 +4,7 @@ const cors=require("cors");
 const mongoose=require("mongoose")
 
 const dotenv=require("dotenv")
-const Users= require("../Models/user.js");
+const Users= require("./Models/user");
 const app=express();
 
 //load env variables
