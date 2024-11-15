@@ -12,13 +12,16 @@ export default function Form() {
   const navigate = useNavigate(); // Initialize navigate
 
   const onSubmit = async (data) => {
-    let r = await fetch("http://localhost:3000/free-estimate", {
-      method: "POST",
-      body: JSON.stringify({ data }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    let r = await fetch(
+      "https://sh-h-flooring-backened.vercel.app/estimate-form",
+      {
+        method: "POST",
+        body: JSON.stringify({ data }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     let res = await r.text();
     console.log(data, res);
     navigate("/ThankYou");
@@ -206,6 +209,7 @@ export default function Form() {
               </label>
               <div className="mt-2 border border-gray-900 ">
                 <input
+                  {...register("prefferedDate")}
                   placeholder="Preffered Date"
                   id="date"
                   name="date"
@@ -223,6 +227,7 @@ export default function Form() {
               </label>
               <div className="mt-2 border border-gray-900 ">
                 <select
+                  {...register("prefferedTime")}
                   placeholder="Preffered Time"
                   id="time"
                   name="time"
@@ -396,6 +401,7 @@ export default function Form() {
         <div className="col-span-full">
           <div className="mt-2 border mx-auto border-gray-900  max-w-2xl ">
             <textarea
+              {...register("comments")}
               placeholder="Comments"
               id="comments"
               name="comments"
