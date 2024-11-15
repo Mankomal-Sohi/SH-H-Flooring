@@ -9,15 +9,15 @@
   "routes": [
     {
       "src": "/contact",
-      "dest": "/server.js"
+      "dest": "api/server.js"
     },
     {
       "src": "/info-form",
-      "dest": "/server.js"
+      "dest": "api/server.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/server.js"
+      "dest": "api/server.js"
     }
   ]
 }

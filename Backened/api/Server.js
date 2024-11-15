@@ -4,8 +4,8 @@ const cors=require("cors");
 const mongoose=require("mongoose")
 
 const dotenv=require("dotenv")
-const Users= require("./Models/user.js");
-const Info = require("./Models/info.js");
+const Users= require("../Models/user.js");
+const Info = require("../Models/info.js");
 
 //load env variables
 dotenv.config({ path: "./.env" });
@@ -83,8 +83,8 @@ app.post("/info-form", async (req, res) => {
     });
   }
 });
-
+module.exports = app;
 // Start server on specified PORT
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
