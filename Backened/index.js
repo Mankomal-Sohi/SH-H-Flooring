@@ -35,6 +35,7 @@ app.get("/",(req,res)=>{
 })
 
 app.post("/contact", async (req, res) => {
+  console.log("Received contact data:", req.body);
   try {
     const user = new Users(req.body);
     console.log("Creating User", req.body);
@@ -55,6 +56,7 @@ app.get("/info-form", (req, res) => {
 });
 
 app.post("/info-form", async (req, res) => {
+  console.log("Received contact data:", req.body);
   try {
     const infoUsers = new Info(req.body);
     console.log("Creating Info users", req.body);
@@ -70,7 +72,9 @@ app.post("/info-form", async (req, res) => {
   }
 });
 
+
 app.post("/estimate-form", async (req, res) => {
+  console.log("Received contact data:", req.body);
   try {
     const reqEstimate = new EstimateRequest(req.body);
     console.log("Requesting Estimate", req.body);
