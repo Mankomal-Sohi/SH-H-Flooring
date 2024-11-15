@@ -11,7 +11,7 @@ const estimateRequestSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  emailAddress: {
+  email: {
     type: String,
     required: true,
     match: /.+\@.+\..+/,
@@ -22,7 +22,7 @@ const estimateRequestSchema = new mongoose.Schema({
     enum: ["United States", "Canada", "Mexico"],
     required: true
   },
-  streetAddress: {
+  streetaddress: {
     type: String,
     trim: true
   },
@@ -43,7 +43,7 @@ const estimateRequestSchema = new mongoose.Schema({
     type: Date
   },
   preferredTime: {
-    type: String,
+    type:String,
     enum: ["Morning", "Afternoon", "Evening"]
   },
   productsInterested: {

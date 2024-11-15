@@ -93,7 +93,7 @@ export default function Form() {
                   id="email"
                   name="email"
                   type="email"
-                  {...register("emailAddress", {
+                  {...register("email", {
                     required: "This field is required",
                     validate: {
                       validEmail: (value) =>
@@ -179,8 +179,8 @@ export default function Form() {
               <div className="mt-2 border border-gray-900 ">
                 <input
                   placeholder="* Postal Code"
-                  id="postal-code"
-                  name="postal-code"
+                  id="postalCode"
+                  name="postalCode"
                   type="text"
                   {...register("postalCode", {
                     required: {
@@ -211,8 +211,9 @@ export default function Form() {
                 <input
                   {...register("prefferedDate")}
                   placeholder="Preffered Date"
-                  id="date"
-                  name="date"
+                  id="prefferedDate"
+                  name="prefferedDate"
+                  type="date"
                   autoComplete="preffered-date"
                   className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 ></input>
@@ -229,8 +230,8 @@ export default function Form() {
                 <select
                   {...register("prefferedTime")}
                   placeholder="Preffered Time"
-                  id="time"
-                  name="time"
+                  id="prefferedTime"
+                  name="prefferedTime"
                   autoComplete="preffered-time"
                   className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
