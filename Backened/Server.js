@@ -18,7 +18,7 @@ const PORT = 3000;
 
 app.use(
   cors({
-    origin: ["https://sh-h-flooring.vercel.app"],
+    origin: ["https://sh-h-flooringfrontened.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
@@ -34,7 +34,7 @@ mongoose
   .catch((err) => console.log(`DB connection error: ${err.message}`));
 
 app.get("/", (req, res) => {
-  res.send("thank you for submiting");
+  res.json("Hello");
 });
 
 // Handle form submissions and log them to the console
