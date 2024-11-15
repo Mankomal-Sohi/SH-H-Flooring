@@ -13,13 +13,16 @@ export default function InfoForm() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("http://localhost:3000/info-form", {
-        method: "POST",
-        body: JSON.stringify(data), // Directly pass the data without wrapping in { data }
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://sh-h-flooring-backened.vercel.app/info-form",
+        {
+          method: "POST",
+          body: JSON.stringify(data), // Directly pass the data without wrapping in { data }
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const res = await response.json();
       if (response.ok) {
         console.log(res);

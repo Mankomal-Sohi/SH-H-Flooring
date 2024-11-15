@@ -5,6 +5,7 @@ const mongoose=require("mongoose")
 
 const dotenv=require("dotenv")
 const Users= require("./Models/user");
+const Info=require("./Models/info");
 const app=express();
 
 //load env variables
@@ -48,6 +49,25 @@ app.post("/contact", async (req, res) => {
   }
 });
 
+app.get("/info-form", (req, res) => {
+  res.send("thank you for submiting");
+});
+
+app.post("/info-form", async (req, res) => {
+  try {
+    const infoUsers = new Info(req.body);
+    console.log("Creating Info users", req.body);
+
+    const toDB = await infoUsers.save();
+    res.status(200).json({
+      infoUsers: toDB,
+    });
+  } catch (err) {
+    res.status(400).json({
+      error: err,
+    });
+  }
+});
 app.listen(3000,()=>{
     console.log("Server is running on PORT 3000")
 })
