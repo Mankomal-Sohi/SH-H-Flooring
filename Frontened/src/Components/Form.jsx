@@ -6,7 +6,7 @@ export default function Form() {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
 
   const navigate = useNavigate(); // Initialize navigate
