@@ -4,10 +4,11 @@ const cors=require("cors");
 const mongoose=require("mongoose")
 
 const dotenv=require("dotenv")
-const Users= require("./Models/user");
+const Contact= require("./Models/contact");
 const Info=require("./Models/info");
 const EstimateRequest=require("./Models/estimate");
 const app=express();
+const adminRoute=require("./router/admin-router")
 
 //load env variables
 dotenv.config({ path: "./.env" });
@@ -37,12 +38,12 @@ app.get("/",(req,res)=>{
 app.post("/contact", async (req, res) => {
   console.log("Received contact data:", req.body);
   try {
-    const user = new Users(req.body);
+    const contact = new Contact(req.body);
     console.log("Creating User", req.body);
 
-    const toDB = await user.save(); // Using await instead of callback
+    const toDB = await contact.save(); // Using await instead of callback
     res.status(200).json({
-      user: toDB,
+      contact: toDB,
     });
   } catch (err) {
     res.status(400).json({
@@ -89,6 +90,10 @@ app.post("/estimate-form", async (req, res) => {
     });
   }
 });
+
+// define admin route
+
+app.use("/admin",adminRoute);
 
 app.listen(3000,()=>{
     console.log("Server is running on PORT 3000")
