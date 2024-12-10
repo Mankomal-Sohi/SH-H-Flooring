@@ -1,7 +1,7 @@
 const Contact = require("../Models/contact");
 const Info=require("../Models/info");
 
-const getAllUsers = async (req, res) => {
+const getAllContact = async (req, res) => {
   try {
     const contactusers = await Contact.find();
     console.log(contactusers);
@@ -33,4 +33,4 @@ const getAllInfo = async (req, res) => {
   }
 }
 
-module.exports = {getAllUsers, getAllInfo};
+module.exports = {getAllContact, getAllInfo};
