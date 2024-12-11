@@ -5,7 +5,7 @@ export default function Form() {
   const {
     register,
     handleSubmit,
-    watch,
+
     formState: { errors, isSubmitting },
   } = useForm();
 
@@ -265,31 +265,24 @@ export default function Form() {
                   What products are you interested in?
                 </legend>
                 <div className="mt-6 grid grid-cols-2 gap-4">
-                  {[
-                    "Carpet",
-                    "Carpet Tile",
-                    "Cork",
-                    "Glass Tile",
-                    "Hardwood",
-                    "Kitchen And Bath",
-                    "Laminate",
-                    "Metal Tile",
-                  ].map((product, index) => (
-                    <div key={index} className="flex items-center">
-                      <input
-                        {...register("productsInterested")}
-                        type="checkbox"
-                        value={product}
-                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                      />
-                      <label
-                        htmlFor={`product-${index}`}
-                        className="ml-2 text-sm leading-6 font-medium text-gray-900"
-                      >
-                        {product}
-                      </label>
-                    </div>
-                  ))}
+                  {["Carpet", "Carpet Tile", "Hardwood", "Laminate"].map(
+                    (product, index) => (
+                      <div key={index} className="flex items-center">
+                        <input
+                          {...register("productsInterested")}
+                          type="checkbox"
+                          value={product}
+                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                        />
+                        <label
+                          htmlFor={`product-${index}`}
+                          className="ml-2 text-sm leading-6 font-medium text-gray-900"
+                        >
+                          {product}
+                        </label>
+                      </div>
+                    )
+                  )}
                 </div>
               </fieldset>
             </div>
