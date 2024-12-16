@@ -8,21 +8,27 @@ const AdminHome = () => {
 
   // Fetch users data
   const fetchUsers = async () => {
-    const response = await fetch("http://localhost:3000/admin/contact");
+    const response = await fetch(
+      "https://sh-h-flooring-backened.vercel.app/admin/contact"
+    );
     const data = await response.json();
     setUsers(data);
   };
 
   // Fetch estimates data
   const fetchEstimates = async () => {
-    const response = await fetch("http://localhost:3000/admin/estimates");
+    const response = await fetch(
+      "https://sh-h-flooring-backened.vercel.app/admin/estimates"
+    );
     const data = await response.json();
     setEstimates(data);
   };
 
   // Fetch info data
   const fetchInfo = async () => {
-    const response = await fetch("http://localhost:3000/admin/info");
+    const response = await fetch(
+      "https://sh-h-flooring-backened.vercel.app/admin/info"
+    );
     const data = await response.json();
     setInfo(data);
   };
