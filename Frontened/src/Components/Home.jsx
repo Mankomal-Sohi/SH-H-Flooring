@@ -26,7 +26,7 @@ const Home = () => {
         </h2>
       </div>
 
-      <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3 my-3 mx-14">
+      <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-3 mx-14">
         <div className="relative flex items-center justify-center">
           <figure className="relative">
             <img
@@ -99,7 +99,7 @@ const Home = () => {
           <figure className="relative">
             <img
               className="object-cover aspect-square h-80 w-72"
-              src="https://homespure.com/wp-content/uploads/2020/09/traditional-white-laminate-flooring.jpg"
+              src="https://live.staticflickr.com/2693/4348660456_c63578ce20_b.jpg"
               alt="Laminate"
             />
             <figcaption className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
@@ -115,40 +115,14 @@ const Home = () => {
       </div>
       <div className="text-center m-3">
         <Link
-          to="#"
+          to="/Carpet"
           className=" font-medium text-green-600 hover:text-green-900 text-center "
         >
           {" "}
           View All Products{" "}
         </Link>
       </div>
-      <div className="p-4 my-12 shopAtCards grid grid-cols-1 md:grid-cols-2 gap-3 mx-4 md:mx-14">
-        {/* Shop In-Store Card */}
-        <div className="relative">
-          <figure className="bg-black">
-            <img
-              className="object-cover aspect-square md:h-80 h-64 w-full opacity-60"
-              src="https://cdn.websites.hibu.com/816e7b37971440cc95b8dd53ed7c9da9/dms3rep/multi/IMG_0060.JPG"
-              alt="shop_in_store"
-            />
-            <figcaption className="absolute inset-0 p-4 md:p-6 flex flex-col justify-between h-full">
-              <h1 className="text-xl md:text-2xl mt-1 font-semibold text-white text-center">
-                SHOP IN-STORE
-              </h1>
-              <h2 className="text-white mt-2 md:mt-4 text-left mx-1 text-sm md:text-lg">
-                Come by our showroom and see what we have to offer. Our
-                knowledgeable staff is ready to assist you in selecting the
-                right flooring to ensure your satisfaction for years to come.
-              </h2>
-              <div className="text-center mt-8 md:mt-12">
-                <h2 className="w-48 md:w-56 text-lg md:text-xl text-white bg-green-600 p-2 hover:bg-green-900 inline-block">
-                  <Link to="/contact">Contact Us</Link>
-                </h2>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
-
+      <div className="p-4 my-12 shopAtCards flex justify-center mx-auto">
         {/* Shop At Home Card */}
         <div className="relative">
           <figure className="bg-black">
