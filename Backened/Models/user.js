@@ -1,6 +1,6 @@
 const mongoose=require("mongoose");
 const Schema = mongoose.Schema;
-const contactSchema = new Schema({
+const userSchema = new Schema({
   id: Number,
   FirstName: String,
   LastName: String,
@@ -10,4 +10,4 @@ const contactSchema = new Schema({
   Comments: String,
 });
 
-module.exports= mongoose.model("Contact", contactSchema);
+module.exports= mongoose.model("Users", userSchema);

@@ -4,7 +4,7 @@ const cors=require("cors");
 const mongoose=require("mongoose")
 
 const dotenv=require("dotenv")
-const Contact= require("./Models/contact");
+const Users= require("./Models/user");
 const Info=require("./Models/info");
 const EstimateRequest=require("./Models/estimate");
 const app=express();
@@ -15,7 +15,7 @@ console.log("Mongo URI:", process.env.MONGO_URI);
 
 app.use(
   cors({
-    origin: ["https://sh-h-flooringfrontened.vercel.app"],
+    origin: ["https://sh-h-flooring-frontend.vercel.app",],
     methods: ["POST", "GET"],
     credentials: true,
   })
@@ -43,13 +43,13 @@ app.get("/contact",(req,res)=>{
 app.post("/contact", async (req, res) => {
   console.log("Received contact data:", req.body);
   try {
-    const contact = new Contact(req.body);
+    const user = new Users(req.body);
     console.log("Creating User", req.body);
 
-    const toDB = await contact.save(); // Using await instead of callback
+    const toDB = await user.save(); // Using await instead of callback
     console.log("User saved to DB:", toDB); 
     res.status(200).json({
-      contact: toDB,
+      user: toDB,
     });
   } catch (err) {
     console.error("Error saving user:", err);
@@ -95,12 +95,13 @@ app.post("/estimate-form", async (req, res) => {
   }
 });
 
-app.get('/admin/contact', async (req, res) => {
+app.get('/admin/users', async (req, res) => {
   try {
-    const contact = await Contact.find();
-    res.json(contact);
+    const users = await Users.find();
+    res.json(users);
+    console.log(users)
   } catch (error) {
-    res.status(500).send('Error fetching contact data');
+    res.status(500).send('Error fetching users');
   }
 });
 
