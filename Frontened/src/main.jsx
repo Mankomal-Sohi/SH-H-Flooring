@@ -34,9 +34,8 @@ import Paint from "./Components/Paint.jsx";
 import ResidentialPainting from "./Components/ResidentialPainting.jsx";
 import VinylInstallation from "./Components/VinylInstallation.jsx";
 import Services from "./Components/Services.jsx";
-
 import AdminHome from "./Components/AdminHome.jsx";
-import Login from "./Components/login.jsx";
+import Login from "./Components/Login.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
