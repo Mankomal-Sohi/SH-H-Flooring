@@ -5,7 +5,7 @@ export default function InfoForm() {
   const {
     register,
     handleSubmit,
-    watch,
+
     formState: { errors },
   } = useForm();
 

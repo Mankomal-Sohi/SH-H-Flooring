@@ -15,7 +15,7 @@ console.log("Mongo URI:", process.env.MONGO_URI);
 
 app.use(
   cors({
-    origin: ["https://sh-h-flooring-frontend.vercel.app",],
+    origin: ["https://sh-h-flooringfrontened.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true,
   })
