@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
   Disclosure,
@@ -10,16 +9,13 @@ import {
   MenuItem,
 } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { FaPhoneAlt } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
 
 const navigation = [
-  // { name: 'Dashboard', href: '#' },
-
   { name: "Reviews", href: "/Reviews" },
-
   { name: "Contact", href: "/Contact" },
+  { name: "Login", href: "/Login" },
 ];
 
 function classNames(...classes) {
@@ -29,11 +25,11 @@ function classNames(...classes) {
 const Header = () => {
   return (
     <>
-      <div className="container flex flex-col md:flex-row justify-between items-center m-auto p-4">
+      <div className="container flex flex-col justify-around md:flex-row items-center m-auto  ">
         {/* Address Section */}
-        <div className="address text-xs lg:text-sm text-center md:text-left mb-4 md:mb-0">
+        <div className="address text-lg text-center md:text-left mb-4 md:mb-0">
           Findlay Creek, Ottawa, K1X 0J3 <br /> (For Appointment only)
-          <span className="flex justify-center text-xs mt-3 lg:text-sm md:justify-start gap-6 items-center cursor-pointer text-red-500 hover:text-red-700 ">
+          <span className="flex justify-center md:justify-start gap-6 items-center cursor-pointer text-red-500 hover:text-red-700 text-lg">
             <FaPhoneAlt /> 343-333-7127
           </span>
         </div>
@@ -41,17 +37,13 @@ const Header = () => {
         {/* Logo Section */}
         <div className="flex justify-center items-center logo mb-4 md:mb-0">
           <Link href="#">
-            <img
-              className="h-20 w-20 md:h-28 md:w-28"
-              src="logo.svg"
-              alt="logo"
-            />
+            <img className="h-40 w-40 " src="logo.svg" alt="logo" />
           </Link>
         </div>
       </div>
 
       <div>
-        <Disclosure as="nav" className="bg-white sm:bg-black">
+        <Disclosure as="nav" className="bg-black">
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 py-0">
             <div className="relative flex h-16 items-center justify-between ">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -135,12 +127,11 @@ const Header = () => {
                         </MenuItem>
                       </MenuItems>
                     </Menu>
-                    {/* Dropdown mwnu for Services */}
+                    {/* Dropdown menu for Services */}
                     <Menu as="div" className="relative inline-block text-left">
                       <div>
                         <MenuButton className="inline-flex justify-center rounded-md px-3 py-2 text-sm font-medium text-slate-100 hover:text-green-400">
                           <NavLink to="/Services">Services</NavLink>
-
                           <ChevronDownIcon
                             className="-mr-1 ml-2 h-5 w-5"
                             aria-hidden="true"
@@ -190,7 +181,7 @@ const Header = () => {
                         </MenuItem>
                       </MenuItems>
                     </Menu>
-                    {navigation.map((item, index) => (
+                    {navigation.map((item) => (
                       <NavLink
                         key={item.name}
                         to={item.href}
@@ -241,12 +232,11 @@ const Header = () => {
           </div>
 
           <DisclosurePanel className="sm:hidden">
-            <div className="px-2 pb-3 pt-2 bg-black flex flex-row flex-wrap">
+            <div className="space-y-1 px-2 pb-3 pt-2">
               {/* Display Products Dropdown */}
-
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <MenuButton className="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-white hover:text-green-400">
+                  <MenuButton className="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:text-green-400">
                     Products
                     <ChevronDownIcon
                       className="-mr-1 ml-2 h-5 w-5"
@@ -254,7 +244,7 @@ const Header = () => {
                     />
                   </MenuButton>
                 </div>
-                <MenuItems className="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <MenuItems className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <MenuItem>
                     <NavLink
                       to="/Carpet"
@@ -265,7 +255,7 @@ const Header = () => {
                   </MenuItem>
                   <MenuItem>
                     <NavLink
-                      to="/CarpetTile"
+                      to="/carpetTile"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Carpet Tile
@@ -309,7 +299,7 @@ const Header = () => {
               {/* Display Services Dropdown */}
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <MenuButton className="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-white hover:text-green-400">
+                  <MenuButton className="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:text-green-400">
                     Services
                     <ChevronDownIcon
                       className="-mr-1 ml-2 h-5 w-5"
@@ -364,7 +354,7 @@ const Header = () => {
               {/* Display About Us Dropdown */}
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <MenuButton className="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-white hover:text-green-400">
+                  <MenuButton className="inline-flex justify-center w-full rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:text-green-400">
                     About Us
                     <ChevronDownIcon
                       className="-mr-1 ml-2 h-5 w-5"
@@ -400,10 +390,9 @@ const Header = () => {
                   to={item.href}
                   aria-current={item.current ? "page" : undefined}
                   className={classNames(
-                    "text-white-700",
+                    "text-gray-700",
                     "font-bold",
-                    "text-sm",
-                    "rounded-md px-3 py-2 font-medium",
+                    "rounded-md px-3 py-2 text-sm font-medium",
                     "hover:text-green-400"
                   )}
                 >

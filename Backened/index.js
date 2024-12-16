@@ -8,16 +8,14 @@ const Contact= require("./Models/contact");
 const Info=require("./Models/info");
 const EstimateRequest=require("./Models/estimate");
 const app=express();
-const adminRoute=require("./router/admin-router")
 
 //load env variables
 dotenv.config({ path: "./.env" });
 console.log("Mongo URI:", process.env.MONGO_URI);
 
-
 app.use(
   cors({
-    origin: ["https://sh-h-flooringfrontened.vercel.app"],
+    origin: ["https://sh-h-flooring-frontend.vercel.app",],
     methods: ["POST", "GET"],
     credentials: true,
   })
@@ -29,10 +27,17 @@ app.use(bodyParser.json());
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("DB Connected"))
-  .catch((err) => console.log(`DB connection error: ${err.message}`));
+ .catch((err) => {
+    console.log(`DB connection error: ${err.message}`);
+    process.exit(1);  // Exit the process if the connection fails
+  });
 
 app.get("/",(req,res)=>{
     res.json("server is running.")
+})
+
+app.get("/contact",(req,res)=>{
+    res.json("Thank you for submitting")
 })
 
 app.post("/contact", async (req, res) => {
@@ -42,18 +47,16 @@ app.post("/contact", async (req, res) => {
     console.log("Creating User", req.body);
 
     const toDB = await contact.save(); // Using await instead of callback
+    console.log("User saved to DB:", toDB); 
     res.status(200).json({
       contact: toDB,
     });
   } catch (err) {
+    console.error("Error saving user:", err);
     res.status(400).json({
       error: err,
     });
   }
-});
-
-app.get("/info-form", (req, res) => {
-  res.send("thank you for submiting");
 });
 
 app.post("/info-form", async (req, res) => {
@@ -85,15 +88,39 @@ app.post("/estimate-form", async (req, res) => {
       reqEstimate: toDB,
     });
   } catch (err) {
+   console.error("Error saving estimate:", err);
     res.status(400).json({
-      error: err,
+      error: err.message,
     });
   }
 });
 
-// define admin route
+app.get('/admin/users', async (req, res) => {
+  try {
+    const users = await Users.find();
+    res.json(users);
+  } catch (error) {
+    res.status(500).send('Error fetching users');
+  }
+});
 
-app.use("/admin",adminRoute);
+app.get('/admin/estimates', async (req, res) => {
+  try {
+    const estimates = await EstimateRequest.find();
+    res.json(estimates);
+  } catch (error) {
+    res.status(500).send('Error fetching estimates');
+  }
+});
+
+app.get('/admin/info', async (req, res) => {
+  try {
+    const info = await Info.find();
+    res.json(info);
+  } catch (error) {
+    res.status(500).send('Error fetching info');
+  }
+});
 
 app.listen(3000,()=>{
     console.log("Server is running on PORT 3000")
