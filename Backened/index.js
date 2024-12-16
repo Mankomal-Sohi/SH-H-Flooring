@@ -95,12 +95,12 @@ app.post("/estimate-form", async (req, res) => {
   }
 });
 
-app.get('/admin/users', async (req, res) => {
+app.get('/admin/contact', async (req, res) => {
   try {
-    const users = await Users.find();
-    res.json(users);
+    const contact = await Contact.find();
+    res.json(contact);
   } catch (error) {
-    res.status(500).send('Error fetching users');
+    res.status(500).send('Error fetching contact data');
   }
 });
 

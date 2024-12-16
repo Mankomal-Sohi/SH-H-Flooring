@@ -8,7 +8,7 @@ const AdminHome = () => {
 
   // Fetch users data
   const fetchUsers = async () => {
-    const response = await fetch("http://localhost:3000/admin/users");
+    const response = await fetch("http://localhost:3000/admin/contact");
     const data = await response.json();
     setUsers(data);
   };
