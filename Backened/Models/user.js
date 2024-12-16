@@ -8,6 +8,7 @@ const userSchema = new Schema({
   PhoneNumber: Number,
   PostalCode: String,
   Comments: String,
+  keepUpdated:Boolean
 });
 
 module.exports= mongoose.model("Users", userSchema);

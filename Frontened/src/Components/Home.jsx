@@ -9,7 +9,7 @@ const Home = () => {
           className="w-screen h-96 object-cover"
           src="https://2.bp.blogspot.com/-J68x1jWW1B4/UZGdiQSe7wI/AAAAAAAAHrw/mK93KPYWTtg/s1600/IL+MIO+ALBERO+COVER.jpg"
         />
-        <h1 className="absolute text-l md:text-2xl lg:text-3xl text-slate-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-thin">
+        <h1 className="absolute text-md md:text-2xl lg:text-3xl text-slate-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-thin">
           Here At SH&H Flooring we Are Offering Best Services At Best Prices!
           Contact Us Now!
         </h1>

@@ -25,25 +25,39 @@ function classNames(...classes) {
 const Header = () => {
   return (
     <>
-      <div className="container flex flex-col justify-around md:flex-row items-center m-auto  ">
-        {/* Address Section */}
-        <div className="address text-lg text-center md:text-left mb-4 md:mb-0">
+      <div className="relative container flex flex-col md:flex-row items-center justify-between m-auto px-4">
+        {/* Address Section (Hidden on Small Screens) */}
+        <div className="address hidden md:block text-xs md:text-lg text-left mb-4 md:mb-0 w-full md:w-auto mt-1">
           Findlay Creek, Ottawa, K1X 0J3 <br /> (For Appointment only)
-          <span className="flex justify-center md:justify-start gap-6 items-center cursor-pointer text-red-500 hover:text-red-700 text-lg">
+          <a
+            href="tel:3433337127"
+            className="flex gap-2 items-center text-red-500 hover:text-red-700 text-sm lg:text-lg cursor-pointer mt-2"
+          >
             <FaPhoneAlt /> 343-333-7127
-          </span>
+          </a>
         </div>
 
         {/* Logo Section */}
-        <div className="flex justify-center items-center logo mb-4 md:mb-0">
+        <div className="absolute my-1 left-1/2 transform -translate-x-1/2 ">
           <Link href="#">
-            <img className="h-40 w-40 " src="logo.svg" alt="logo" />
+            <img
+              className="h-20 w-20 md:h-24 md:w-24"
+              src="logo.svg"
+              alt="logo"
+            />
           </Link>
+        </div>
+
+        {/* Phone Section (Visible on Small Screens) */}
+        <div className="absolute right-4 top-4 md:hidden text-lg flex items-center gap-2 text-red-500 hover:text-red-700 cursor-pointer">
+          <a href="tel:3433337127" className="flex items-center gap-2">
+            <FaPhoneAlt />
+          </a>
         </div>
       </div>
 
       <div>
-        <Disclosure as="nav" className="bg-black">
+        <Disclosure as="nav" className="bg-white md:bg-black">
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 py-0">
             <div className="relative flex h-16 items-center justify-between ">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -71,7 +85,7 @@ const Header = () => {
                         <MenuButton className="inline-flex justify-center rounded-md px-3 py-2 text-sm font-medium text-slate-100 hover:text-green-400">
                           Products
                           <ChevronDownIcon
-                            className="-mr-1 ml-2 h-5 w-5"
+                            className="mr-1 ml-2 h-5 w-5"
                             aria-hidden="true"
                           />
                         </MenuButton>
