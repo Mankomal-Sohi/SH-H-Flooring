@@ -9,7 +9,7 @@ const AdminHome = () => {
   // Fetch users data
   const fetchUsers = async () => {
     const response = await fetch(
-      "https://sh-h-flooring-backened.vercel.app/admin/contact"
+      "https://sh-h-flooring-backened.vercel.app/admin/users"
     );
     const data = await response.json();
     setUsers(data);
