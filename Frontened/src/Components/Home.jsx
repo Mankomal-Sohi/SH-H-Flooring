@@ -26,7 +26,7 @@ const Home = () => {
         </h2>
       </div>
 
-      <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-3 mx-14">
+      <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3 my-2 mx-14">
         <div className="relative flex items-center justify-center">
           <figure className="relative">
             <img
@@ -124,10 +124,10 @@ const Home = () => {
       </div>
       <div className="p-4 my-12 shopAtCards flex justify-center mx-auto">
         {/* Shop At Home Card */}
-        <div className="relative">
-          <figure className="bg-black">
+        <div className="relative w-full md:w-3/4 lg:w-2/3">
+          <figure className="bg-black w-full">
             <img
-              className="object-cover aspect-square md:h-80 h-64 w-full opacity-60"
+              className="object-cover aspect-square md:h-96 h-64 w-full opacity-60 mx-auto"
               src="https://assets.site-static.com/blogphotos/1715/2715-home-flooring-guide.jpg"
               alt="shop_at_home"
             />
@@ -149,6 +149,7 @@ const Home = () => {
           </figure>
         </div>
       </div>
+
       <div className="request-form bg-slate-200 p-2">
         <Form />
       </div>
