@@ -15,7 +15,6 @@ import { FaPhoneAlt } from "react-icons/fa";
 const navigation = [
   { name: "Reviews", href: "/Reviews" },
   { name: "Contact", href: "/Contact" },
-  { name: "Login", href: "/Login" },
 ];
 
 function classNames(...classes) {
@@ -38,7 +37,7 @@ const Header = () => {
         </div>
 
         {/* Logo Section */}
-        <div className="absolute my-1 left-1/2 transform -translate-x-1/2 ">
+        <div className="absolute my-1 left-1/2 transform -translate-x-1/2">
           <Link href="#">
             <img
               className="h-20 w-20 md:h-24 md:w-24"
@@ -47,12 +46,21 @@ const Header = () => {
             />
           </Link>
         </div>
+        <button className="text-white bg-black font-medium static p-2 rounded-md text-sm hover:text-green-400 flex justify-center items-center">
+          <NavLink to="/Login">Login</NavLink>
+        </button>
 
-        {/* Phone Section (Visible on Small Screens) */}
-        <div className="absolute right-4 top-4 md:hidden text-lg flex items-center gap-2 text-red-500 hover:text-red-700 cursor-pointer">
-          <a href="tel:3433337127" className="flex items-center gap-2">
+        {/* Phone and Login Section (On Same Line) */}
+        <div className="flex items-center gap-4 md:hidden absolute right-4 top-4">
+          <a
+            href="tel:3433337127"
+            className="text-red-500 hover:text-red-700 flex items-center gap-2 text-lg"
+          >
             <FaPhoneAlt />
           </a>
+          <button className="text-white bg-black font-medium p-2 rounded-md text-sm hover:text-green-400 flex justify-center items-center">
+            <NavLink to="/Login">Login</NavLink>
+          </button>
         </div>
       </div>
 

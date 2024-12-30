@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const CarpetTile = () => {
@@ -21,7 +20,7 @@ const CarpetTile = () => {
           </h2>
         </div>
 
-        <div class="grid grid-cols-2 gap-5 gap-y-5 p-10 m-10 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-5 gap-y-5 p-10 m-10 md:grid-cols-4">
           <div>
             <figure>
               <Link to={"/carpetTile/GreyTiles"}>

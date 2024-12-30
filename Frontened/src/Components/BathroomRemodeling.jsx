@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const BathroomRemodeling = () => {
@@ -24,7 +23,7 @@ const BathroomRemodeling = () => {
         <p className="text-sm py-5 font-thin">
           At Bathroom Remodeling, we specialize in transforming your bathroom
           into a luxurious and functional space that suits your style and meets
-          your needs. Whether you're looking for a simple upgrade or a complete
+          your needs. Whether you are looking for a simple upgrade or a complete
           redesign, our expert team provides personalized services to enhance
           the beauty and efficiency of your bathroom.
         </p>
