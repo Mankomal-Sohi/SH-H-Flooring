@@ -1,4 +1,3 @@
-import React from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -33,10 +32,7 @@ const Location = () => {
             <iframe
               width="520"
               height="400"
-              frameborder="0"
               scrolling="no"
-              marginheight="0"
-              marginwidth="0"
               src="https://maps.google.com/maps?width=720&amp;height=400&amp;hl=en&amp;q=Findlay%20Creek%20Ottawa,%20K1X%200J3+(SH&amp;H%20Carpet%20Solutions)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             >
               <a href="https://www.gps.ie/">gps vehicle tracker</a>
