@@ -1,5 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { FaClipboardList } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
